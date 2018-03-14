@@ -18,3 +18,5 @@ print('test_tuple-->', test_tuple)
 print('test_tuple.list1-->', test_tuple.list1)
 
 print('test_tuple-->', test_tuple.printList())
+
+print('test_tuple-->', test_tuple.d1)
