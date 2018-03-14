@@ -1,4 +1,4 @@
-fileName = 'test1.txt'
+fileName = 'test.txt'
 
 file = None
 
