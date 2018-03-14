@@ -1,9 +1,11 @@
-def funLambda(x, y):
+
+def funcLambda(x, y):
     return x + y
 
 
-def testLambda():
-    print(funLambda(2, 3))
+def funcLambda2(x, y):
+    return x + y
 
 
-testLambda()
+print(funcLambda(2, 3))
+print(funcLambda2(3, 5))
