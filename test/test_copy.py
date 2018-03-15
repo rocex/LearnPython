@@ -3,29 +3,39 @@ import copy
 a = [1, 2, 3]
 b = a
 
-print(a, b)
-print(id(a))
-print(id(b))
+print('--->1')
+print('a-->', id(a), a)
+print('b-->', id(b), b)
 
 b[1] = 5
 
-print(a, b)
-print(id(a))
-print(id(b))
+print('--->2')
+print('a-->', id(a), a)
+print('b-->', id(b), b)
 
 b.sort()
-print(a, b)
-print(id(a))
-print(id(b))
+print('--->3 sort')
+print('a-->', id(a), a)
+print('b-->', id(b), b)
+
+a[2] = [4, 5, 6]
 
 c = copy.copy(a)
-print(a, b, c)
-print(id(a))
-print(id(b))
-print(id(c))
+print('--->4 copy')
+print('a-->', id(a), a)
+print('b-->', id(b), b)
+print('c-->', id(c), c)
 
 c[2] = 7
-print(a, b, c)
-print(id(a))
-print(id(b))
-print(id(c))
+print('--->5 ')
+print('a-->', id(a), a)
+print('b-->', id(b), b)
+print('c-->', id(c), c)
+
+d = copy.deepcopy(a)
+
+print('--->6 deepcopy')
+print('a-->', id(a), a)
+print('b-->', id(b), b)
+print('c-->', id(c), c)
+print('d-->', id(d), d)
