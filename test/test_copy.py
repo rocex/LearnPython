@@ -13,7 +13,6 @@ print(a, b)
 print(id(a))
 print(id(b))
 
-
 b.sort()
 print(a, b)
 print(id(a))
