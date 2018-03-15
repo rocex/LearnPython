@@ -2,9 +2,7 @@
 def funcLambda(x, y):
     return x + y
 
+funcLambda2 = lambda x, y: x + y
 
-def funcLambda2(x, y): return x + y
-
-
-print(funcLambda(2, 3))
-print(funcLambda2(3, 5))
+print('common function: ', funcLambda(2, 3))
+print('lambda function: ', funcLambda2(3, 2))
