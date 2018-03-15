@@ -24,7 +24,6 @@ print(id(a))
 print(id(b))
 print(id(c))
 
-
 c[2] = 7
 print(a, b, c)
 print(id(a))
