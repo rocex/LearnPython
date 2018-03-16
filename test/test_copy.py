@@ -30,6 +30,7 @@ print('a-->', id(a), a)
 print('b-->', id(b), b)
 print('c-->', id(c), c)
 
+
 d = copy.deepcopy(a)
 print('--->6 deepcopy')
 print('a-->', id(a), a)
