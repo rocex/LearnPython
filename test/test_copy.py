@@ -20,20 +20,33 @@ print('b-->', id(b), b)
 a[2] = [4, 5, 6]
 c = copy.copy(a)
 print('--->4 copy')
-print('a-->', id(a), a)
+print('a-->', id(a), a, 'id(a[2])-->', id(a[2]), 'id(a[2][0])-->', id(a[2][0]))
 print('b-->', id(b), b)
-print('c-->', id(c), c)
+print('c-->', id(c), c, 'id(c[2])-->', id(c[2]), 'id(c[2][0])-->', id(c[2][0]))
+
+c[2][0] = 9
+print('--->5 copy')
+print('a-->', id(a), a, 'id(a[2])-->', id(a[2]), 'id(a[2][0])-->', id(a[2][0]))
+print('b-->', id(b), b)
+print('c-->', id(c), c, 'id(c[2])-->', id(c[2]), 'id(c[2][0])-->', id(c[2][0]))
 
 c[2] = 7
-print('--->5 ')
-print('a-->', id(a), a)
+print('--->6 ')
+print('a-->', id(a), a, 'id(a[2])-->', id(a[2]), 'id(a[2][0])-->', id(a[2][0]))
 print('b-->', id(b), b)
-print('c-->', id(c), c)
+print('c-->', id(c), c, 'id(c[2])-->', id(c[2]), '   id(c[2])-->', id(c[2]))
 
 
 d = copy.deepcopy(a)
-print('--->6 deepcopy')
-print('a-->', id(a), a)
+print('--->7 deepcopy')
+print('a-->', id(a), a, 'id(a[2])-->', id(a[2]), 'id(a[2][0])-->', id(a[2][0]))
 print('b-->', id(b), b)
 print('c-->', id(c), c)
-print('d-->', id(d), d)
+print('d-->', id(d), d, 'id(d[2])-->', id(d[2]), 'id(d[2][0])-->', id(d[2][0]))
+
+d[2][0] = 99
+print('--->8 deepcopy')
+print('a-->', id(a), a, 'id(a[2])-->', id(a[2]), 'id(a[2][0])-->', id(a[2][0]))
+print('b-->', id(b), b)
+print('c-->', id(c), c)
+print('d-->', id(d), d, 'id(d[2])-->', id(d[2]), 'id(d[2][0])-->', id(d[2][0]))
