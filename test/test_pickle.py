@@ -18,7 +18,7 @@ try:
     with open(fileName, 'rb') as file1:
         text = pickle.load(file1)
         print('reload file-->', text)
-except Exception as e:
-    raise
+except Exception as ex:
+    print('exception->', ex)
 finally:
-    pass
+    file1.close()
