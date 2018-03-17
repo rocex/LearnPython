@@ -16,10 +16,9 @@ finally:
 
 try:
     with open(fileName, 'rb') as file1:
-        pickle.load(file1)
+        text = pickle.load(file1)
+        print('reload file-->', text)
 except Exception as e:
     raise
-else:
-    pass
 finally:
     pass
