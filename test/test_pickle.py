@@ -35,4 +35,4 @@ fileName = 'test_pickle.bin'
 
 writePickle(fileName)
 reloadPickle(fileName)
-reloadPickle(fileName + '1')
+reloadPickle(fileName + '')
