@@ -20,6 +20,7 @@ class GUI(QMainWindow):
         self.statusBar().showMessage("文本状态栏")
         # 创建一个菜单栏
         menu = self.menuBar()
+
         # 创建两个菜单
         file_menu = menu.addMenu("文件")
         file_menu.addSeparator()
@@ -40,6 +41,7 @@ class GUI(QMainWindow):
         exit_action.triggered.connect(self.close)
         # 设置退出快捷键
         exit_action.setShortcut('Ctrl+Q')
+
         # 添加退出行为到菜单上
         file_menu.addAction(exit_action)
 
@@ -62,7 +64,6 @@ class GUI(QMainWindow):
         grid_layout.addWidget(button_1, 0, 1)  # 0行1列
         grid_layout.addWidget(label_2, 1, 0)  # 1行0列
         grid_layout.addWidget(button_2, 1, 1)  # 1行1列
-
         grid_layout.addWidget(button_3, 2, 0, 1, 5)
         # 对齐方式
         grid_layout.setAlignment(Qt.AlignTop)
