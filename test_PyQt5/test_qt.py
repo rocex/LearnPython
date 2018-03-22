@@ -76,6 +76,7 @@ class GUI(QMainWindow):
 
         self.setCentralWidget(layout_widget)
 
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     gui = GUI()
