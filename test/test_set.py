@@ -12,9 +12,11 @@ print(unique_array)
 unique_array.add('1')
 print(unique_array)
 
-unique_array.remove('1')
+print(unique_array.remove('1'))
 print(unique_array)
 
+print(unique_array.discard('2'))  # 和remove的区别是当不存在数据的时候不会报错
+print(unique_array)
 
 unique_array.clear()
 print(unique_array)
