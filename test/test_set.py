@@ -1,7 +1,12 @@
+import logger
+
+logger = Logger(logname='log.txt', loglevel=1, logger="fox").getlog()
+logger.info('foorbar')
+
 array = ['1', 'a', 'c', '0', '1', 0, 'c', 'b', 'z', '2', '1', 0]
 
 string = 'Welcome to python world!'
-print(set(string))
+logger.log(set(string))
 
 unique_array = set(array)
 print(unique_array)
