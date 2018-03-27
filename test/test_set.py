@@ -23,5 +23,11 @@ print(unique_array)
 print(unique_array.discard('2'))  # 和remove的区别是当不存在数据的时候不会报错
 print(unique_array)
 
+set1 = unique_array
+set2 = ['c']
+
+print(set1.difference(set2))  # 不同的元素
+print(set1.intersection(set2))  # 相同的元素
+
 unique_array.clear()
 print(unique_array)
