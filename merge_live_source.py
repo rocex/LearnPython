@@ -1,9 +1,9 @@
 
-# 把形如
+# 把如下格式的直播源
 # cctv1,url1
 # cctv1,url2
 # cctv1,url3
-# 格式的直播源合并成
+# 合并成如下格式，以方便导入hdp、直播狗、小薇直播等app中
 # cctv1,url1#url2#url3
 
 # 频道名词 英文逗号 源地址（如果同一个频道有多个源地址，用#号隔开）
@@ -26,7 +26,8 @@ def readFile():
                 continue
 
             if keyValue[0] in result:
-                result[keyValue[0]] = result[keyValue[0]] + "#" + keyValue[1].replace("\n", "")
+                result[keyValue[0]] = result[keyValue[0]] + \
+                    "#" + keyValue[1].replace("\n", "")
             else:
                 result[keyValue[0]] = keyValue[1].replace("\n", "")
 
