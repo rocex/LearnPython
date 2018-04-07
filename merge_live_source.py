@@ -26,8 +26,7 @@ def readFile():
                 continue
 
             if keyValue[0] in result:
-                result[keyValue[0]] = result[keyValue[0]] + \
-                    "#" + keyValue[1].replace("\n", "")
+                result[keyValue[0]] = result[keyValue[0]] + "#" + keyValue[1].replace("\n", "")
             else:
                 result[keyValue[0]] = keyValue[1].replace("\n", "")
 
@@ -42,6 +41,10 @@ def writeFile():
         for key in keys:
             line = key + "," + result.get(key)
             file.write(line+'\n')
+
+    with fileinput.input(files=('spam.txt', 'eggs.txt')) as file:
+        for line in file:
+            process(line)
 
 
 readFile()
