@@ -26,12 +26,11 @@ def readFile():
                 continue
 
             if keyValue[0] in result:
-                result[keyValue[0]] = result[keyValue[0]] + \
-                    "#" + keyValue[1].replace("\n", "")
+                result[keyValue[0]] = result[keyValue[0]] + " # " + keyValue[1].replace("\n", "")
             else:
                 result[keyValue[0]] = keyValue[1].replace("\n", "")
 
-        # print(result)
+            print(keyValue[0] + "-->" +result[keyValue[0]])
 
 
 def writeFile():
@@ -40,7 +39,7 @@ def writeFile():
         keys = result.keys()
 
         for key in keys:
-            line = key + "," + result.get(key)
+            line = key + ", " + result.get(key)
             file.write(line+'\n')
 
 
