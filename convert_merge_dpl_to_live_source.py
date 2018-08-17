@@ -39,16 +39,14 @@ def readFile():
 
             keyTitle = str(iIndex) + "*title*"
 
-            strTitle = text2[i+1].replace(keyTitle, "", 1)
+            strTitle = text2[i+1].replace(keyTitle, "", 1).replace("\n", "")
 
             if strTitle in result:
-                result[strTitle] = result[strTitle] + \
-                    " # " + strFile.replace("\n", "")
+                result[strTitle] = result[strTitle] + " # " + strFile.replace("\n", "")
             else:
                 result[strTitle] = strFile.replace("\n", "")
 
-            print(str(i) + "-->"+strTitle + "-->" + strFile)
-            print(strTitle + "-->" +result[strTitle])
+            print(str(i) + "-->" + strTitle + "-->" + result[strTitle])
 
             iIndex += 1
 
