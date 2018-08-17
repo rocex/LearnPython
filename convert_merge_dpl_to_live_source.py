@@ -19,7 +19,6 @@ writeFileName = "C:\\live.txt"
 
 result = {}
 
-
 def readFile():
     with open(readFileName, 'r') as file:
         text2 = file.readlines()
