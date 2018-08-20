@@ -19,35 +19,35 @@ writeFileName = "C:\\live.txt"
 
 result = {}
 
+
 def readFile():
     with open(readFileName, 'r') as file:
         text2 = file.readlines()
 
-        iIndex = 1
-
         for i in range(len(text2)):
-            keyFile = str(iIndex) + "*file*"
-            blFind = text2[i].startswith(keyFile)
+            print("i-->" + str(i))
 
-            print(str(i))
+            keyFile = str(i) + "*file*"
+            strFile = find(text2, keyFile)
 
-            if not blFind:
+            if not strFile:
                 continue
 
-            strFile = text2[i].replace(keyFile, "", 1)
+            keyTitle = str(i) + "*title*"
+            strTitle = find(text2, keyTitle)
 
-            keyTitle = str(iIndex) + "*title*"
+            if not strTitle:
+                continue
 
-            strTitle = text2[i+1].replace(keyTitle, "", 1).replace("\n", "")
+            strFile = strFile.replace("\n", "").replace(keyFile, "", 1)
+            strTitle = strTitle.replace("\n", "").replace(keyTitle, "", 1)
 
             if strTitle in result:
-                result[strTitle] = result[strTitle] + " # " + strFile.replace("\n", "")
+                result[strTitle] = result[strTitle] + " # " + strFile
             else:
-                result[strTitle] = strFile.replace("\n", "")
+                result[strTitle] = strFile
 
-            print(str(i) + "-->" + strTitle + "-->" + result[strTitle])
-
-            iIndex += 1
+            print("i-->[%d], [%s], [%s]" %(i, strTitle, strFile))
 
 
 def writeFile():
@@ -57,7 +57,13 @@ def writeFile():
 
         for key in keys:
             line = key + ", " + result.get(key)
-            file.write(line+'\n')
+            file.write(line + '\n')
+
+
+def find(text, key):
+    for i in range(len(text)):
+        if text[i].startswith(key):
+            return text[i]
 
 
 readFile()
