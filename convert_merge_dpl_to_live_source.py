@@ -14,14 +14,14 @@
 # 频道名词 英文逗号 源地址（如果同一个频道有多个源地址，用#号隔开）
 # 例如： cctv1,http://www.cctv1.com#http://www.ccav1.com
 
-readFileName = "C:\\live.dpl"
+readFileName = "D:\\Program Files\\PotPlayer\\playlist\\直播源.dpl"
 writeFileName = "C:\\live.txt"
 
 result = {}
 
 
 def readFile():
-    with open(readFileName, 'r') as file:
+    with open(readFileName, 'r', encoding='utf8') as file:
         text2 = file.readlines()
 
         for i in range(len(text2)):
@@ -47,7 +47,7 @@ def readFile():
             else:
                 result[strTitle] = strFile
 
-            print("i-->[%d], [%s], [%s]" %(i, strTitle, strFile))
+            print("i-->[%d], [%s], [%s]" % (i, strTitle, strFile))
 
 
 def writeFile():
