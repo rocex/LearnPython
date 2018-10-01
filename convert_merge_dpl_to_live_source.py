@@ -14,8 +14,10 @@
 # 频道名词 英文逗号 源地址（如果同一个频道有多个源地址，用#号隔开）
 # 例如： cctv1,http://www.cctv1.com#http://www.ccav1.com
 
+from datetime import date
+
 readFileName = "D:\\Program Files\\PotPlayer\\playlist\\直播源.dpl"
-writeFileName = "C:\\live.txt"
+writeFileName = "C:\\live_" + str(date.today()) + ".txt"
 
 result = {}
 
