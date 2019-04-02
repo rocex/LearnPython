@@ -15,14 +15,15 @@
 # 例如： cctv1,http://www.cctv1.com#http://www.ccav1.com
 
 from datetime import date
+from pathlib import Path
 
-readFileName = "D:\\Program Files\\PotPlayer\\playlist\\直播源.dpl"
-writeFileName = "C:\\live_" + str(date.today()) + ".txt"
-
-result = {}
+readDirName = "D:\\Program Files\\PotPlayer\\playlist\\"
+writeDirName = "C:\\live\\" + str(date.today()) + ".txt"
 
 
-def readFile():
+def readFile(readFileName):
+    result = {}
+
     with open(readFileName, 'r', encoding='utf8') as file:
         text2 = file.readlines()
 
@@ -51,8 +52,10 @@ def readFile():
 
             print("i-->[%d], [%s], [%s]" % (i, strTitle, strFile))
 
+    return result
 
-def writeFile():
+
+def writeFile(writeFileName, result):
     with open(writeFileName, 'w') as file:
 
         keys = result.keys()
@@ -68,5 +71,17 @@ def find(text, key):
             return text[i]
 
 
-readFile()
-writeFile()
+def test():
+    path = Path(readDirName)
+
+    files = list(path.glob('*.dpl'))
+
+    for file in files:
+        result = readFile(file)
+        writeFile(writeDirName, result)
+
+
+test()
+
+# readFile()
+# writeFile()
