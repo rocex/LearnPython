@@ -33,6 +33,8 @@ class GUI(QMainWindow):
         # 添加一个行为到菜单
         file_menu.addAction(new_action)
 
+        file_menu.addSeparator()
+
         # 创建退出行为
         exit_action = QAction('退出', self)
         # 退出操作
