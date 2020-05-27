@@ -109,7 +109,6 @@ class MailGUI:  # 定义邮件管理窗口类
                        '@qq.com': 'smtp.qq.com'}
         return server_dict[server_name]
 
-
 try:
     # reload(sys)
     # sys.setdefaultencoding('utf-8')
